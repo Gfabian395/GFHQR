@@ -7,7 +7,7 @@ export default function QRGenerator({ categoriaId, productoId }) {
   const baseUrl =
     window.location.hostname === "localhost"
       ? window.location.origin
-      : "https://TU_DOMINIO_DEL_DEPLOY"; // <- reemplazar por tu URL final
+      : "https://gfhqr.vercel.app/"; // <- reemplazar por tu URL final
 
   // URL del QR apuntando a la ruta de React Router
   const url = `${baseUrl}/categoria/${categoriaId}/producto/${productoId}`;
