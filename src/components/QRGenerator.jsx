@@ -3,7 +3,14 @@ import QRCode from "react-qr-code";
 import "./QRGenerator.css";
 
 export default function QRGenerator({ categoriaId, productoId }) {
-  const url = `${window.location.origin}/producto/${categoriaId}/${productoId}`;
+  // Detecta si estás en local o en deploy
+  const baseUrl =
+    window.location.hostname === "localhost"
+      ? window.location.origin
+      : "https://TU_DOMINIO_DEL_DEPLOY"; // <- reemplazar por tu URL final
+
+  // URL del QR apuntando a la ruta de React Router
+  const url = `${baseUrl}/categoria/${categoriaId}/producto/${productoId}`;
 
   return (
     <div className="qr-container">
